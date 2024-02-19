@@ -8,8 +8,15 @@
 		expanded="true"
 		class="sapUiResponsiveContentPadding">
 		<items>
-			<IconTabFilter text="Info" key="info">
-				<Text text="Info content goes here ..." />
+			<IconTabFilter text="Nome" key="info">
+				<VBox >
+					<Text text="Nome: {perfil>/name} sobrenome: {perfil>/last_name} idade: {perfil>/age}" />
+
+					<TextArea value="{perfil>/address/street/name} - {perfil>/address/street/number}
+					                {perfil>/address/city} - {perfil>/address/state}" 
+					editable="{perfil>/address/edit}" rows="8"/>
+
+				</VBox>
 			</IconTabFilter>
 			<IconTabFilter text="Attachments" key="attachments">
 				<Text text="Attachments go here ..." />
