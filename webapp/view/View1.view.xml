@@ -8,7 +8,7 @@
 		expanded="true"
 		class="sapUiResponsiveContentPadding">
 		<items>
-			<IconTabFilter text="Nome" key="info">
+			<IconTabFilter text="Info Pessoal" key="info">
 				<VBox >
 					<Text text="Nome: {perfil>/name} sobrenome: {perfil>/last_name} idade: {perfil>/age}" />
 
@@ -16,10 +16,52 @@
 					                {perfil>/address/city} - {perfil>/address/state}" 
 					editable="{perfil>/address/edit}" rows="8"/>
 
+					<List
+						headerText="Skills"
+						headerLevel="H2"
+						items="{
+							path: 'perfil>/skills'
+						}" >
+						<StandardListItem
+							title="{perfil>name}"/>
+					</List>
 				</VBox>
 			</IconTabFilter>
-			<IconTabFilter text="Attachments" key="attachments">
-				<Text text="Attachments go here ..." />
+			<IconTabFilter text="Fan of" key="fanof">
+				
+				<VBox >
+					<Table id="idProductsTable"
+						inset="false"
+						items="{
+							path: 'perfil>/fan_of',
+							sorter: {
+								path: 'name'
+							}
+						}">
+						<columns>
+							<Column
+								width="12em">
+								<Text text="Nome" />
+							</Column>
+							<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+								<Text text="Profissão" />
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle">
+								<cells>
+									<ObjectIdentifier
+										title="{perfil>name}"/>
+									<Text
+										text="{perfil>job}" />
+
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</VBox>
 			</IconTabFilter>
 			<IconTabFilter text="Notes" key="notes">
 				<Text text="Notes go here ..." />
