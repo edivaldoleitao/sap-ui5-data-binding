@@ -63,12 +63,32 @@
 					</Table>
 				</VBox>
 			</IconTabFilter>
-			<IconTabFilter text="Notes" key="notes">
-				<Text text="Notes go here ..." />
+			<IconTabFilter text="Social Media" key="social_media">
+									<Table id="idSocialTable"
+						inset="false"
+						items="{
+							path: 'perfil>/social',
+							sorter: {
+								path: 'name'
+							}
+						}">
+						<columns>
+							<Column
+								width="12em">
+								<Text text="Rede" />
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle">
+								<cells>
+									<Link text="{perfil>name}" target="_blank" href="{perfil>value}"/>
+				
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
 			</IconTabFilter>
-			<IconTabFilter text="People" key="people">
-				<Text text="People content goes here ..." />
-			</IconTabFilter>
+
 		</items>
 	</IconTabBar>
         </content >
